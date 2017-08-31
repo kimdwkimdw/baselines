@@ -13,7 +13,7 @@ def rollout(env, policy, max_pathlength, animate=False, obfilter=None):
     """
     Simulate the env and policy for max_pathlength steps
     """
-    ob = env.reset()
+    ob = np.array(env.reset())
     prev_ob = np.float32(np.zeros(ob.shape))
     if obfilter: ob = obfilter(ob)
     terminated = False
